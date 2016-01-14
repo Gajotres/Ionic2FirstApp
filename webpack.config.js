@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 
 
 module.exports = {
@@ -19,16 +18,10 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'awesome-typescript',
         query: {
-          cacheDirectory: true,
-          plugins: [
-            "angular2-annotations",
-            "transform-decorators-legacy",
-            "transform-class-properties",
-            "transform-flow-strip-types"
-          ],
-          presets: ['es2015']
+          doTypeCheck: false,
+          useWebpackText: true
         },
         include: path.resolve('app'),
         exclude: /node_modules/

@@ -1,9 +1,10 @@
+import {Inject} from 'angular2/core';
 import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
 
 export class MovieService {  
 
-	constructor(http: Http) {
+	constructor(@Inject(Http) http: Http) {
 		this.http = http
 	}	
 
