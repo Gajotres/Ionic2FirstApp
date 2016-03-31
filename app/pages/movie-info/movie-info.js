@@ -1,11 +1,15 @@
-import {IonicApp, Page, NavController, NavParams} from 'ionic/ionic';
+import {IonicApp, Page, NavController, NavParams} from 'ionic-angular';
 
 @Page({
   templateUrl: 'build/pages/movie-info/movie-info.html'
 })
 
 export class MovieInfo {
-  constructor(app: IonicApp, nav: NavController, navParams: NavParams) {
+  static get parameters() {
+    return [[IonicApp], [NavController], [NavParams]];
+  }
+
+  constructor(app, nav, navParams) {
     this.nav = nav;
     this.movie = navParams.get('movie'); 
     console.log(this.movie); 

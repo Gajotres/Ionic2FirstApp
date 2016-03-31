@@ -1,4 +1,4 @@
-import {Page, NavController} from 'ionic/ionic';
+import {Page, NavController} from 'ionic-angular';
 import {MovieService} from '../services/MovieService';
 import {MovieInfo} from '../movie-info/movie-info';
  
@@ -8,7 +8,11 @@ import {MovieInfo} from '../movie-info/movie-info';
 })
  
 export class MovieListPage {
-  constructor(nav: NavController, movieService:MovieService) {
+  static get parameters() {
+    return [[NavController], [MovieService]];
+  }
+
+  constructor(nav, movieService) {
     this.nav = nav;
     this.movieService = movieService;
   }
